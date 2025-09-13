@@ -1,10 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
-	<title>hello world eee</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вивчення Git</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: #24292e;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      border-left: 5px solid #f1502f;
+      padding-left: 10px;
+      color: #f1502f;
+    }
+    ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+    .commands li {
+      margin-bottom: 10px;
+    }
+    .certificate {
+      border: 2px dashed #f1502f;
+      padding: 20px;
+      margin: 20px 0;
+      background: #fff;
+      text-align: center;
+    }
+    .certificate h3 {
+      margin-top: 0;
+      color: #24292e;
+    }
+    footer {
+      background: #24292e;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+    }
+    a {
+      color: #f1502f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-	<h1>wwww</h1>
-	                       
+
+<header>
+  <h1>Основи Git</h1>
+</header>
+
+<section>
+  <h2>Що таке системи контролю версій і Git</h2>
+  <p>Системи контролю версій (VCS) дозволяють відстежувати зміни у файлах, зберігати історію проєкту та співпрацювати над кодом у команді. 
+     Git — це найпопулярніша розподілена система контролю версій, створена Лінусом Торвальдсом у 2005 році.</p>
+</section>
+
+<section>
+  <h2>Основні можливості та переваги Git</h2>
+  <ul>
+    <li>Розподілена структура — кожен розробник має повну копію репозиторію.</li>
+    <li>Швидкість роботи з великими проєктами.</li>
+    <li>Гілкування (branching) та злиття (merging) для паралельної розробки.</li>
+    <li>Безпечне зберігання історії.</li>
+    <li>Інтеграція з популярними платформами (GitHub, GitLab, Bitbucket).</li>
+  </ul>
+</section>
+
+<section>
+  <h2>10 базових команд Git</h2>
+  <ul class="commands">
+    <li><b>git init</b> – створює новий локальний репозиторій.</li>
+    <li><b>git clone &lt;url&gt;</b> – копіює віддалений репозиторій на комп’ютер.</li>
+    <li><b>git status</b> – показує стан файлів (змінені, додані).</li>
+    <li><b>git add &lt;file&gt;</b> – додає файл у список для фіксації (staging area).</li>
+    <li><b>git commit -m "повідомлення"</b> – зберігає зміни з коментарем.</li>
+    <li><b>git log</b> – показує історію комітів.</li>
+    <li><b>git branch</b> – відображає список гілок.</li>
+    <li><b>git checkout &lt;branch&gt;</b> – перемикається на іншу гілку.</li>
+    <li><b>git merge &lt;branch&gt;</b> – зливає гілку з поточною.</li>
+    <li><b>git push / git pull</b> – надсилає або отримує зміни з віддаленого репозиторію.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Сертифікат курсу по Git</h2>
+  <div class="certificate">
+    <h3>Сертифікат</h3>
+    <p><b></b><br><b></b></p>
+    <p><i></i></p>
+  </div>
+</section>
+
+<section>
+  <h2>Джерела інформації</h2>
+  <ul>
+    <li><a href="https://git-scm.com/doc" target="_blank">Офіційна документація Git</a></li>
+    <li><a href="https://guides.github.com/" target="_blank">GitHub Guides</a></li>
+    <li><a href="https://www.atlassian.com/git/tutorials" target="_blank">Atlassian Git Tutorials</a></li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2025 Навчальний проєкт / Коляда Михайло</p>
+</footer>
+
 </body>
 </html>
