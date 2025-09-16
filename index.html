@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Огляд GNU/Linux — вступ</title>
+  <title>ГЋГЈГ«ГїГ¤ GNU/Linux вЂ” ГўГ±ГІГіГЇ</title>
   <style>
     :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7dd3fc;--glass:rgba(255,255,255,0.04)}
     *{box-sizing:border-box}
@@ -42,129 +42,130 @@
       <path d="M12 4v8l3 3" stroke="#7dd3fc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <div>
-      <h1>Короткий огляд GNU/Linux</h1>
-      <div style="margin-top:6px"><span class="badge">OS • CLI • BASH</span></div>
+      <h1>ГЉГ®Г°Г®ГІГЄГЁГ© Г®ГЈГ«ГїГ¤ GNU/Linux</h1>
+      <div style="margin-top:6px"><span class="badge">OS вЂў CLI вЂў BASH</span></div>
     </div>
   </header>
 
   <div class="container">
     <div class="grid">
-      <nav aria-label="Навігація сторінки">
-        <h2>Розділи</h2>
+      <nav aria-label="ГЌГ ГўВіГЈГ Г¶ВіГї Г±ГІГ®Г°ВіГ­ГЄГЁ">
+        <h2>ГђГ®Г§Г¤ВіГ«ГЁ</h2>
         <ul>
-          <li><a href="#about">Що таке GNU/Linux</a></li>
-          <li><a href="#distros">Популярні дистрибутиви</a></li>
-          <li><a href="#commands">Приклади команд</a></li>
-          <li><a href="#script">BASH — імітація авторизації</a></li>
-          <li><a href="#sources">Джерела</a></li>
+          <li><a href="#about">Г™Г® ГІГ ГЄГҐ GNU/Linux</a></li>
+          <li><a href="#distros">ГЏГ®ГЇГіГ«ГїГ°Г­Ві Г¤ГЁГ±ГІГ°ГЁГЎГіГІГЁГўГЁ</a></li>
+          <li><a href="#commands">ГЏГ°ГЁГЄГ«Г Г¤ГЁ ГЄГ®Г¬Г Г­Г¤</a></li>
+          <li><a href="#script">BASH вЂ” ВіГ¬ВіГІГ Г¶ВіГї Г ГўГІГ®Г°ГЁГ§Г Г¶ВіВї</a></li>
+          <li><a href="#sources">Г„Г¦ГҐГ°ГҐГ«Г </a></li>
         </ul>
       </nav>
 
       <main>
         <section id="about">
-          <h3>Що таке GNU/Linux</h3>
+          <h3>Г™Г® ГІГ ГЄГҐ GNU/Linux</h3>
           <p>
-            GNU/Linux — це поєднання ядра Linux (kernel) та набору утиліт GNU і додаткового програмного забезпечення. Це вільна, відкрита операційна система, яку можна модифікувати та розповсюджувати за відкритими ліцензіями (наприклад, GPL). Linux широко використовується на серверах, вбудованих системах, робочих станціях та хмарних середовищах.
+            GNU/Linux вЂ” Г¶ГҐ ГЇГ®ВєГ¤Г­Г Г­Г­Гї ГїГ¤Г°Г  Linux (kernel) ГІГ  Г­Г ГЎГ®Г°Гі ГіГІГЁГ«ВіГІ GNU Ві Г¤Г®Г¤Г ГІГЄГ®ГўГ®ГЈГ® ГЇГ°Г®ГЈГ°Г Г¬Г­Г®ГЈГ® Г§Г ГЎГҐГ§ГЇГҐГ·ГҐГ­Г­Гї. Г–ГҐ ГўВіГ«ГјГ­Г , ГўВіГ¤ГЄГ°ГЁГІГ  Г®ГЇГҐГ°Г Г¶ВіГ©Г­Г  Г±ГЁГ±ГІГҐГ¬Г , ГїГЄГі Г¬Г®Г¦Г­Г  Г¬Г®Г¤ГЁГґВіГЄГіГўГ ГІГЁ ГІГ  Г°Г®Г§ГЇГ®ГўГ±ГѕГ¤Г¦ГіГўГ ГІГЁ Г§Г  ГўВіГ¤ГЄГ°ГЁГІГЁГ¬ГЁ Г«ВіГ¶ГҐГ­Г§ВіГїГ¬ГЁ (Г­Г ГЇГ°ГЁГЄГ«Г Г¤, GPL). Linux ГёГЁГ°Г®ГЄГ® ГўГЁГЄГ®Г°ГЁГ±ГІГ®ГўГіВєГІГјГ±Гї Г­Г  Г±ГҐГ°ГўГҐГ°Г Гµ, ГўГЎГіГ¤Г®ГўГ Г­ГЁГµ Г±ГЁГ±ГІГҐГ¬Г Гµ, Г°Г®ГЎГ®Г·ГЁГµ Г±ГІГ Г­Г¶ВіГїГµ ГІГ  ГµГ¬Г Г°Г­ГЁГµ Г±ГҐГ°ГҐГ¤Г®ГўГЁГ№Г Гµ.
           </p>
         </section>
 
         <section id="distros">
-          <h3>Найпопулярніші дистрибутиви</h3>
-          <p>Короткий перелік дистрибутивів, що часто використовуються:</p>
+          <h3>ГЌГ Г©ГЇГ®ГЇГіГ«ГїГ°Г­ВіГёВі Г¤ГЁГ±ГІГ°ГЁГЎГіГІГЁГўГЁ</h3>
+          <p>ГЉГ®Г°Г®ГІГЄГЁГ© ГЇГҐГ°ГҐГ«ВіГЄ Г¤ГЁГ±ГІГ°ГЁГЎГіГІГЁГўВіГў, Г№Г® Г·Г Г±ГІГ® ГўГЁГЄГ®Г°ГЁГ±ГІГ®ГўГіГѕГІГјГ±Гї:</p>
           <div class="distros">
-            <div class="distro"><strong>Ubuntu</strong><div style="color:var(--muted);font-size:13px">Дружній для початківців, велике ком'юніті</div></div>
-            <div class="distro"><strong>Debian</strong><div style="color:var(--muted);font-size:13px">Стабільний, основа багатьох інших дистрибутивів</div></div>
-            <div class="distro"><strong>Fedora</strong><div style="color:var(--muted);font-size:13px">Свіжі пакети, підтримка від Red Hat</div></div>
-            <div class="distro"><strong>Arch Linux</strong><div style="color:var(--muted);font-size:13px">Ролінг-реліз, для просунутих користувачів</div></div>
-            <div class="distro"><strong>CentOS Stream / RHEL</strong><div style="color:var(--muted);font-size:13px">Для серверів, корпоративна підтримка</div></div>
-            <div class="distro"><strong>Linux Mint</strong><div style="color:var(--muted);font-size:13px">Підходить переходящим з Windows</div></div>
+            <div class="distro"><strong>Ubuntu</strong><div style="color:var(--muted);font-size:13px">Г„Г°ГіГ¦Г­ВіГ© Г¤Г«Гї ГЇГ®Г·Г ГІГЄВіГўГ¶ВіГў, ГўГҐГ«ГЁГЄГҐ ГЄГ®Г¬'ГѕГ­ВіГІВі</div></div>
+            <div class="distro"><strong>Debian</strong><div style="color:var(--muted);font-size:13px">Г‘ГІГ ГЎВіГ«ГјГ­ГЁГ©, Г®Г±Г­Г®ГўГ  ГЎГ ГЈГ ГІГјГ®Гµ ВіГ­ГёГЁГµ Г¤ГЁГ±ГІГ°ГЁГЎГіГІГЁГўВіГў</div></div>
+            <div class="distro"><strong>Fedora</strong><div style="color:var(--muted);font-size:13px">Г‘ГўВіГ¦Ві ГЇГ ГЄГҐГІГЁ, ГЇВіГ¤ГІГ°ГЁГ¬ГЄГ  ГўВіГ¤ RedВ Hat</div></div>
+            <div class="distro"><strong>Arch Linux</strong><div style="color:var(--muted);font-size:13px">ГђГ®Г«ВіГ­ГЈ-Г°ГҐГ«ВіГ§, Г¤Г«Гї ГЇГ°Г®Г±ГіГ­ГіГІГЁГµ ГЄГ®Г°ГЁГ±ГІГіГўГ Г·ВіГў</div></div>
+            <div class="distro"><strong>CentOS Stream / RHEL</strong><div style="color:var(--muted);font-size:13px">Г„Г«Гї Г±ГҐГ°ГўГҐГ°ВіГў, ГЄГ®Г°ГЇГ®Г°Г ГІГЁГўГ­Г  ГЇВіГ¤ГІГ°ГЁГ¬ГЄГ </div></div>
+            <div class="distro"><strong>Linux Mint</strong><div style="color:var(--muted);font-size:13px">ГЏВіГ¤ГµГ®Г¤ГЁГІГј ГЇГҐГ°ГҐГµГ®Г¤ГїГ№ГЁГ¬ Г§ Windows</div></div>
           </div>
         </section>
 
         <section id="commands">
-          <h3>Приклади базових команд CLI</h3>
-          <p>Команди нижче — короткий набір для роботи з файловою системою та консоллю.</p>
+          <h3>ГЏГ°ГЁГЄГ«Г Г¤ГЁ ГЎГ Г§Г®ГўГЁГµ ГЄГ®Г¬Г Г­Г¤ CLI</h3>
+          <p>ГЉГ®Г¬Г Г­Г¤ГЁ Г­ГЁГ¦Г·ГҐ вЂ” ГЄГ®Г°Г®ГІГЄГЁГ© Г­Г ГЎВіГ° Г¤Г«Гї Г°Г®ГЎГ®ГІГЁ Г§ ГґГ Г©Г«Г®ГўГ®Гѕ Г±ГЁГ±ГІГҐГ¬Г®Гѕ ГІГ  ГЄГ®Г­Г±Г®Г«Г«Гѕ.</p>
           <div class="commands">
-            <div class="cmd"><code>pwd</code><div style="color:var(--muted);margin-top:6px">Показує поточний робочий каталог</div></div>
-            <div class="cmd"><code>echo &quot;текст&quot;</code><div style="color:var(--muted);margin-top:6px">Виводить текст у консоль</div></div>
-            <div class="cmd"><code>ls -la</code><div style="color:var(--muted);margin-top:6px">Перелік файлів каталогу з детальною інформацією</div></div>
-            <div class="cmd"><code>cd /path/to/dir</code><div style="color:var(--muted);margin-top:6px">Зміна поточного каталогу</div></div>
-            <div class="cmd"><code>touch file.txt</code><div style="color:var(--muted);margin-top:6px">Створює порожній файл або змінює час модифікації</div></div>
-            <div class="cmd"><code>mkdir newdir</code><div style="color:var(--muted);margin-top:6px">Створює каталог</div></div>
-            <div class="cmd"><code>cp src dest</code><div style="color:var(--muted);margin-top:6px">Копіює файл або каталог (-r для рекурсії)</div></div>
-            <div class="cmd"><code>mv old new</code><div style="color:var(--muted);margin-top:6px">Перейменувати / перемістити</div></div>
-            <div class="cmd"><code>rm file</code><div style="color:var(--muted);margin-top:6px">Видалення файлу (rm -r для каталогів)</div></div>
-            <div class="cmd"><code>history</code><div style="color:var(--muted);margin-top:6px">Покажe історію введених команд</div></div>
+            <div class="cmd"><code>pwd</code><div style="color:var(--muted);margin-top:6px">ГЏГ®ГЄГ Г§ГіВє ГЇГ®ГІГ®Г·Г­ГЁГ© Г°Г®ГЎГ®Г·ГЁГ© ГЄГ ГІГ Г«Г®ГЈ</div></div>
+            <div class="cmd"><code>echo &quot;ГІГҐГЄГ±ГІ&quot;</code><div style="color:var(--muted);margin-top:6px">Г‚ГЁГўГ®Г¤ГЁГІГј ГІГҐГЄГ±ГІ Гі ГЄГ®Г­Г±Г®Г«Гј</div></div>
+            <div class="cmd"><code>ls -la</code><div style="color:var(--muted);margin-top:6px">ГЏГҐГ°ГҐГ«ВіГЄ ГґГ Г©Г«ВіГў ГЄГ ГІГ Г«Г®ГЈГі Г§ Г¤ГҐГІГ Г«ГјГ­Г®Гѕ ВіГ­ГґГ®Г°Г¬Г Г¶ВіВєГѕ</div></div>
+            <div class="cmd"><code>cd /path/to/dir</code><div style="color:var(--muted);margin-top:6px">Г‡Г¬ВіГ­Г  ГЇГ®ГІГ®Г·Г­Г®ГЈГ® ГЄГ ГІГ Г«Г®ГЈГі</div></div>
+            <div class="cmd"><code>touch file.txt</code><div style="color:var(--muted);margin-top:6px">Г‘ГІГўГ®Г°ГѕВє ГЇГ®Г°Г®Г¦Г­ВіГ© ГґГ Г©Г« Г ГЎГ® Г§Г¬ВіГ­ГѕВє Г·Г Г± Г¬Г®Г¤ГЁГґВіГЄГ Г¶ВіВї</div></div>
+            <div class="cmd"><code>mkdir newdir</code><div style="color:var(--muted);margin-top:6px">Г‘ГІГўГ®Г°ГѕВє ГЄГ ГІГ Г«Г®ГЈ</div></div>
+            <div class="cmd"><code>cp src dest</code><div style="color:var(--muted);margin-top:6px">ГЉГ®ГЇВіГѕВє ГґГ Г©Г« Г ГЎГ® ГЄГ ГІГ Г«Г®ГЈ (-r Г¤Г«Гї Г°ГҐГЄГіГ°Г±ВіВї)</div></div>
+            <div class="cmd"><code>mv old new</code><div style="color:var(--muted);margin-top:6px">ГЏГҐГ°ГҐГ©Г¬ГҐГ­ГіГўГ ГІГЁ / ГЇГҐГ°ГҐГ¬ВіГ±ГІГЁГІГЁ</div></div>
+            <div class="cmd"><code>rm file</code><div style="color:var(--muted);margin-top:6px">Г‚ГЁГ¤Г Г«ГҐГ­Г­Гї ГґГ Г©Г«Гі (rm -r Г¤Г«Гї ГЄГ ГІГ Г«Г®ГЈВіГў)</div></div>
+            <div class="cmd"><code>history</code><div style="color:var(--muted);margin-top:6px">ГЏГ®ГЄГ Г¦e ВіГ±ГІГ®Г°ВіГѕ ГўГўГҐГ¤ГҐГ­ГЁГµ ГЄГ®Г¬Г Г­Г¤</div></div>
           </div>
 
-          <h4 style="margin-top:14px">Невеликий приклад використання</h4>
-          <pre><code># Створимо структуру
+          <h4 style="margin-top:14px">ГЌГҐГўГҐГ«ГЁГЄГЁГ© ГЇГ°ГЁГЄГ«Г Г¤ ГўГЁГЄГ®Г°ГЁГ±ГІГ Г­Г­Гї</h4>
+          <pre><code># Г‘ГІГўГ®Г°ГЁГ¬Г® Г±ГІГ°ГіГЄГІГіГ°Гі
 mkdir project && cd project
 touch README.md
-echo "# Мій проект" &gt; README.md
+echo "# ГЊВіГ© ГЇГ°Г®ГҐГЄГІ" &gt; README.md
 ls -la
 </code></pre>
         </section>
 
         <section id="script">
-          <h3>BASH-скрипт — імітація авторизації (текстовий режим)</h3>
-          <p>Нижче — приклад простого shell-скрипта, який демонструє введення логіна/пароля і базову перевірку. <strong>Увага:</strong> у реальних умовах не зберігайте паролі у відкритому вигляді і використовуйте належні механізми аутентифікації.</p>
+          <h3>BASH-Г±ГЄГ°ГЁГЇГІ вЂ” ВіГ¬ВіГІГ Г¶ВіГї Г ГўГІГ®Г°ГЁГ§Г Г¶ВіВї (ГІГҐГЄГ±ГІГ®ГўГЁГ© Г°ГҐГ¦ГЁГ¬)</h3>
+          <p>ГЌГЁГ¦Г·ГҐ вЂ” ГЇГ°ГЁГЄГ«Г Г¤ ГЇГ°Г®Г±ГІГ®ГЈГ® shell-Г±ГЄГ°ГЁГЇГІГ , ГїГЄГЁГ© Г¤ГҐГ¬Г®Г­Г±ГІГ°ГіВє ГўГўГҐГ¤ГҐГ­Г­Гї Г«Г®ГЈВіГ­Г /ГЇГ Г°Г®Г«Гї Ві ГЎГ Г§Г®ГўГі ГЇГҐГ°ГҐГўВіГ°ГЄГі. <strong>Г“ГўГ ГЈГ :</strong> Гі Г°ГҐГ Г«ГјГ­ГЁГµ ГіГ¬Г®ГўГ Гµ Г­ГҐ Г§ГЎГҐГ°ВіГЈГ Г©ГІГҐ ГЇГ Г°Г®Г«Ві Гі ГўВіГ¤ГЄГ°ГЁГІГ®Г¬Гі ГўГЁГЈГ«ГїГ¤Ві Ві ГўГЁГЄГ®Г°ГЁГ±ГІГ®ГўГіГ©ГІГҐ Г­Г Г«ГҐГ¦Г­Ві Г¬ГҐГµГ Г­ВіГ§Г¬ГЁ Г ГіГІГҐГ­ГІГЁГґВіГЄГ Г¶ВіВї.</p>
 
           <pre><code># auth_demo.sh
 #!/usr/bin/env bash
 
-# Простий демонстраційний скрипт авторизації
-# Збережіть цей файл як auth_demo.sh і зробіть виконуваним: chmod +x auth_demo.sh
+# ГЏГ°Г®Г±ГІГЁГ© Г¤ГҐГ¬Г®Г­Г±ГІГ°Г Г¶ВіГ©Г­ГЁГ© Г±ГЄГ°ГЁГЇГІ Г ГўГІГ®Г°ГЁГ§Г Г¶ВіВї
+# Г‡ГЎГҐГ°ГҐГ¦ВіГІГј Г¶ГҐГ© ГґГ Г©Г« ГїГЄ auth_demo.sh Ві Г§Г°Г®ГЎВіГІГј ГўГЁГЄГ®Г­ГіГўГ Г­ГЁГ¬: chmod +x auth_demo.sh
 
-# Жорстко вбудовані "користувачі" для демонстрації
+# Г†Г®Г°Г±ГІГЄГ® ГўГЎГіГ¤Г®ГўГ Г­Ві "ГЄГ®Г°ГЁГ±ГІГіГўГ Г·Ві" Г¤Г«Гї Г¤ГҐГ¬Г®Г­Г±ГІГ°Г Г¶ВіВї
 declare -A USERS
 USERS[alice]=password123
 USERS[bob]=qwerty
 
-read -p "Логін: " LOGIN
-# -s приховує введення пароля
-read -s -p "Пароль: " PASS
+read -p "Г‹Г®ГЈВіГ­: " LOGIN
+# -s ГЇГ°ГЁГµГ®ГўГіВє ГўГўГҐГ¤ГҐГ­Г­Гї ГЇГ Г°Г®Г«Гї
+read -s -p "ГЏГ Г°Г®Г«Гј: " PASS
 echo
 
-# Невеликий таймаут для правдоподібності
+# ГЌГҐГўГҐГ«ГЁГЄГЁГ© ГІГ Г©Г¬Г ГіГІ Г¤Г«Гї ГЇГ°Г ГўГ¤Г®ГЇГ®Г¤ВіГЎГ­Г®Г±ГІВі
 sleep 0.6
 
 if [[ -v USERS[$LOGIN] && "${USERS[$LOGIN]}" == "$PASS" ]]; then
-  echo "Авторизація успішна. Ласкаво просимо, $LOGIN!"
-  # Демонстраційні дані сесії
-  echo "$(date) - Користувач $LOGIN увійшов(ла)"
+  echo "ГЂГўГІГ®Г°ГЁГ§Г Г¶ВіГї ГіГ±ГЇВіГёГ­Г . Г‹Г Г±ГЄГ ГўГ® ГЇГ°Г®Г±ГЁГ¬Г®, $LOGIN!"
+  # Г„ГҐГ¬Г®Г­Г±ГІГ°Г Г¶ВіГ©Г­Ві Г¤Г Г­Ві Г±ГҐГ±ВіВї
+  echo "$(date) - ГЉГ®Г°ГЁГ±ГІГіГўГ Г· $LOGIN ГіГўВіГ©ГёГ®Гў(Г«Г )"
   exit 0
 else
-  echo "Невірний логін або пароль. Спробуйте ще раз."
-  # Лиміт простих спроб
+  echo "ГЌГҐГўВіГ°Г­ГЁГ© Г«Г®ГЈВіГ­ Г ГЎГ® ГЇГ Г°Г®Г«Гј. Г‘ГЇГ°Г®ГЎГіГ©ГІГҐ Г№ГҐ Г°Г Г§."
+  # Г‹ГЁГ¬ВіГІ ГЇГ°Г®Г±ГІГЁГµ Г±ГЇГ°Г®ГЎ
   sleep 0.4
   exit 1
 fi
 </code></pre>
 
-          <p style="margin-top:8px;color:var(--muted)">Порада: щоб зробити більш реалістичну перевірку, замініть перевірку на роботу з хешами (наприклад, через <code>sha256sum</code>) або зберігайте користувачів у захищеному файлі з правами доступу.</p>
+          <p style="margin-top:8px;color:var(--muted)">ГЏГ®Г°Г Г¤Г : Г№Г®ГЎ Г§Г°Г®ГЎГЁГІГЁ ГЎВіГ«ГјГё Г°ГҐГ Г«ВіГ±ГІГЁГ·Г­Гі ГЇГҐГ°ГҐГўВіГ°ГЄГі, Г§Г Г¬ВіГ­ВіГІГј ГЇГҐГ°ГҐГўВіГ°ГЄГі Г­Г  Г°Г®ГЎГ®ГІГі Г§ ГµГҐГёГ Г¬ГЁ (Г­Г ГЇГ°ГЁГЄГ«Г Г¤, Г·ГҐГ°ГҐГ§ <code>sha256sum</code>) Г ГЎГ® Г§ГЎГҐГ°ВіГЈГ Г©ГІГҐ ГЄГ®Г°ГЁГ±ГІГіГўГ Г·ВіГў Гі Г§Г ГµГЁГ№ГҐГ­Г®Г¬Гі ГґГ Г©Г«Ві Г§ ГЇГ°Г ГўГ Г¬ГЁ Г¤Г®Г±ГІГіГЇГі.</p>
 
           <div style="margin-top:10px">
-            <h4>Демонстрація (імітація терміналу у браузері)</h4>
-            <div class="terminal-demo">$ Логін: &lt;введіть &gt;\n$ Пароль: ********\nАвторизація успішна. Ласкаво просимо!</div>
+            <h4>Г„ГҐГ¬Г®Г­Г±ГІГ°Г Г¶ВіГї (ВіГ¬ВіГІГ Г¶ВіГї ГІГҐГ°Г¬ВіГ­Г Г«Гі Гі ГЎГ°Г ГіГ§ГҐГ°Ві)</h4>
+            <div class="terminal-demo">$ Г‹Г®ГЈВіГ­: &lt;ГўГўГҐГ¤ВіГІГј &gt;\n$ ГЏГ Г°Г®Г«Гј: ********\nГЂГўГІГ®Г°ГЁГ§Г Г¶ВіГї ГіГ±ГЇВіГёГ­Г . Г‹Г Г±ГЄГ ГўГ® ГЇГ°Г®Г±ГЁГ¬Г®!</div>
           </div>
         </section>
 
         <section id="sources">
-          <h3>Джерела та подальше читання</h3>
+          <h3>Г„Г¦ГҐГ°ГҐГ«Г  ГІГ  ГЇГ®Г¤Г Г«ГјГёГҐ Г·ГЁГІГ Г­Г­Гї</h3>
           <ul class="sources">
-            <li>Офіційний вебсайт про Linux kernel (kernel.org)</li>
-            <li>Проєкт GNU (gnu.org)</li>
-            <li>Документація Ubuntu, Debian, Fedora, Arch — офіційні сайти дистрибутивів</li>
-            <li>"The Linux Command Line" — William E. Shotts (безкоштовна книга для початківців)</li>
+            <li>ГЋГґВіГ¶ВіГ©Г­ГЁГ© ГўГҐГЎГ±Г Г©ГІ ГЇГ°Г® Linux kernel (kernel.org)</li>
+            <li>ГЏГ°Г®ВєГЄГІ GNU (gnu.org)</li>
+            <li>Г„Г®ГЄГіГ¬ГҐГ­ГІГ Г¶ВіГї Ubuntu, Debian, Fedora, Arch вЂ” Г®ГґВіГ¶ВіГ©Г­Ві Г±Г Г©ГІГЁ Г¤ГЁГ±ГІГ°ГЁГЎГіГІГЁГўВіГў</li>
+            <li>"The Linux Command Line" вЂ” William E. Shotts (ГЎГҐГ§ГЄГ®ГёГІГ®ГўГ­Г  ГЄГ­ГЁГЈГ  Г¤Г«Гї ГЇГ®Г·Г ГІГЄВіГўГ¶ВіГў)</li>
           </ul>
         </section>
 
         <footer>
-          <div>Створено: короткий навчальний матеріал — приклад веб-сторінки з демо-кодом.</div>
+          <div>Г‘ГІГўГ®Г°ГҐГ­Г®: ГЄГ®Г°Г®ГІГЄГЁГ© Г­Г ГўГ·Г Г«ГјГ­ГЁГ© Г¬Г ГІГҐГ°ВіГ Г« вЂ” ГЇГ°ГЁГЄГ«Г Г¤ ГўГҐГЎ-Г±ГІГ®Г°ВіГ­ГЄГЁ Г§ Г¤ГҐГ¬Г®-ГЄГ®Г¤Г®Г¬.</div>
         </footer>
       </main>
     </div>
   </div>
 </body>
 </html>
+
