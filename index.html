@@ -1,133 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Р’РёРІС‡РµРЅРЅСЏ Git</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Огляд GNU/Linux — вступ</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
-    }
-    header {
-      background: #24292e;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    section {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      border-left: 5px solid #f1502f;
-      padding-left: 10px;
-      color: #f1502f;
-    }
-    ul {
-      list-style: square;
-      padding-left: 20px;
-    }
-    .commands li {
-      margin-bottom: 10px;
-    }
-    .certificate {
-      border: 2px dashed #f1502f;
-      padding: 20px;
-      margin: 20px 0;
-      background: #fff;
-      text-align: center;
-    }
-    .certificate h3 {
-      margin-top: 0;
-      color: #24292e;
-    }
-    footer {
-      background: #24292e;
-      color: #fff;
-      text-align: center;
-      padding: 10px 0;
-      margin-top: 20px;
-    }
-    a {
-      color: #f1502f;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7dd3fc;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,#091025 0%, #071021 100%); color:#e6edf3; line-height:1.45}
+    header{padding:28px 24px; display:flex; align-items:center; gap:16px; border-bottom:1px solid rgba(255,255,255,0.03)}
+    header h1{font-size:20px; margin:0}
+    .container{max-width:1100px; margin:28px auto; padding:0 18px}
+    .grid{display:grid; grid-template-columns: 320px 1fr; gap:20px}
+    nav{background:var(--card); padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    nav h2{font-size:14px; margin:0 0 12px 0}
+    nav ul{list-style:none; padding:0; margin:0}
+    nav li{margin:6px 0}
+    nav a{color:var(--muted); text-decoration:none; display:block; padding:8px; border-radius:8px}
+    nav a:hover{background:var(--glass); color:var(--accent)}
+    main{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:22px; border-radius:12px; min-height:420px}
+    section{margin-bottom:22px}
+    h3{margin:0 0 8px 0; color:#dff6ff}
+    p{color:var(--muted); margin:0 0 12px 0}
+    .badge{display:inline-block; padding:6px 8px; background:rgba(125,211,252,0.08); color:var(--accent); border-radius:8px; font-weight:600; font-size:13px}
+    .distros{display:flex; flex-wrap:wrap; gap:10px}
+    .distro{background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:10px; min-width:140px}
+    pre{background:#06101a; color:#cdeaff; padding:14px; border-radius:8px; overflow:auto}
+    code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace}
+    .commands{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px}
+    .cmd{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); padding:10px; border-radius:8px}
+    footer{font-size:13px; color:var(--muted); margin-top:12px}
+    .sources li{margin:6px 0}
+    .terminal-demo{background:#000; color:#0fdfb3; padding:12px; border-radius:8px; font-family:mono; white-space:pre-wrap}
+    @media(max-width:900px){.grid{grid-template-columns:1fr} nav{order:2}}
   </style>
 </head>
 <body>
+  <header>
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <circle cx="12" cy="12" r="10" stroke="#7dd3fc" stroke-width="1.2" opacity="0.18"/>
+      <path d="M12 4v8l3 3" stroke="#7dd3fc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div>
+      <h1>Короткий огляд GNU/Linux</h1>
+      <div style="margin-top:6px"><span class="badge">OS • CLI • BASH</span></div>
+    </div>
+  </header>
 
-<header>
-  <h1>РћСЃРЅРѕРІРё Git</h1>
-</header>
+  <div class="container">
+    <div class="grid">
+      <nav aria-label="Навігація сторінки">
+        <h2>Розділи</h2>
+        <ul>
+          <li><a href="#about">Що таке GNU/Linux</a></li>
+          <li><a href="#distros">Популярні дистрибутиви</a></li>
+          <li><a href="#commands">Приклади команд</a></li>
+          <li><a href="#script">BASH — імітація авторизації</a></li>
+          <li><a href="#sources">Джерела</a></li>
+        </ul>
+      </nav>
 
-<section>
-  <h2>Р©Рѕ С‚Р°РєРµ СЃРёСЃС‚РµРјРё РєРѕРЅС‚СЂРѕР»СЋ РІРµСЂСЃС–Р№ С– Git</h2>
-  <p>РЎРёСЃС‚РµРјРё РєРѕРЅС‚СЂРѕР»СЋ РІРµСЂСЃС–Р№ (VCS) РґРѕР·РІРѕР»СЏСЋС‚СЊ РІС–РґСЃС‚РµР¶СѓРІР°С‚Рё Р·РјС–РЅРё Сѓ С„Р°Р№Р»Р°С…, Р·Р±РµСЂС–РіР°С‚Рё С–СЃС‚РѕСЂС–СЋ РїСЂРѕС”РєС‚Сѓ С‚Р° СЃРїС–РІРїСЂР°С†СЋРІР°С‚Рё РЅР°Рґ РєРѕРґРѕРј Сѓ РєРѕРјР°РЅРґС–. 
-     Git вЂ” С†Рµ РЅР°Р№РїРѕРїСѓР»СЏСЂРЅС–С€Р° СЂРѕР·РїРѕРґС–Р»РµРЅР° СЃРёСЃС‚РµРјР° РєРѕРЅС‚СЂРѕР»СЋ РІРµСЂСЃС–Р№, СЃС‚РІРѕСЂРµРЅР° Р›С–РЅСѓСЃРѕРј РўРѕСЂРІР°Р»СЊРґСЃРѕРј Сѓ 2005 СЂРѕС†С–.</p>
-</section>
+      <main>
+        <section id="about">
+          <h3>Що таке GNU/Linux</h3>
+          <p>
+            GNU/Linux — це поєднання ядра Linux (kernel) та набору утиліт GNU і додаткового програмного забезпечення. Це вільна, відкрита операційна система, яку можна модифікувати та розповсюджувати за відкритими ліцензіями (наприклад, GPL). Linux широко використовується на серверах, вбудованих системах, робочих станціях та хмарних середовищах.
+          </p>
+        </section>
 
-<section>
-  <h2>РћСЃРЅРѕРІРЅС– РјРѕР¶Р»РёРІРѕСЃС‚С– С‚Р° РїРµСЂРµРІР°РіРё Git</h2>
-  <ul>
-    <li>Р РѕР·РїРѕРґС–Р»РµРЅР° СЃС‚СЂСѓРєС‚СѓСЂР° вЂ” РєРѕР¶РµРЅ СЂРѕР·СЂРѕР±РЅРёРє РјР°С” РїРѕРІРЅСѓ РєРѕРїС–СЋ СЂРµРїРѕР·РёС‚РѕСЂС–СЋ.</li>
-    <li>РЁРІРёРґРєС–СЃС‚СЊ СЂРѕР±РѕС‚Рё Р· РІРµР»РёРєРёРјРё РїСЂРѕС”РєС‚Р°РјРё.</li>
-    <li>Р“С–Р»РєСѓРІР°РЅРЅСЏ (branching) С‚Р° Р·Р»РёС‚С‚СЏ (merging) РґР»СЏ РїР°СЂР°Р»РµР»СЊРЅРѕС— СЂРѕР·СЂРѕР±РєРё.</li>
-    <li>Р‘РµР·РїРµС‡РЅРµ Р·Р±РµСЂС–РіР°РЅРЅСЏ С–СЃС‚РѕСЂС–С—.</li>
-    <li>Р†РЅС‚РµРіСЂР°С†С–СЏ Р· РїРѕРїСѓР»СЏСЂРЅРёРјРё РїР»Р°С‚С„РѕСЂРјР°РјРё (GitHub, GitLab, Bitbucket).</li>
-  </ul>
-</section>
+        <section id="distros">
+          <h3>Найпопулярніші дистрибутиви</h3>
+          <p>Короткий перелік дистрибутивів, що часто використовуються:</p>
+          <div class="distros">
+            <div class="distro"><strong>Ubuntu</strong><div style="color:var(--muted);font-size:13px">Дружній для початківців, велике ком'юніті</div></div>
+            <div class="distro"><strong>Debian</strong><div style="color:var(--muted);font-size:13px">Стабільний, основа багатьох інших дистрибутивів</div></div>
+            <div class="distro"><strong>Fedora</strong><div style="color:var(--muted);font-size:13px">Свіжі пакети, підтримка від Red Hat</div></div>
+            <div class="distro"><strong>Arch Linux</strong><div style="color:var(--muted);font-size:13px">Ролінг-реліз, для просунутих користувачів</div></div>
+            <div class="distro"><strong>CentOS Stream / RHEL</strong><div style="color:var(--muted);font-size:13px">Для серверів, корпоративна підтримка</div></div>
+            <div class="distro"><strong>Linux Mint</strong><div style="color:var(--muted);font-size:13px">Підходить переходящим з Windows</div></div>
+          </div>
+        </section>
 
-<section>
-  <h2>10 Р±Р°Р·РѕРІРёС… РєРѕРјР°РЅРґ Git</h2>
-  <ul class="commands">
-    <li><b>git init</b> вЂ“ СЃС‚РІРѕСЂСЋС” РЅРѕРІРёР№ Р»РѕРєР°Р»СЊРЅРёР№ СЂРµРїРѕР·РёС‚РѕСЂС–Р№.</li>
-    <li><b>git clone &lt;url&gt;</b> вЂ“ РєРѕРїС–СЋС” РІС–РґРґР°Р»РµРЅРёР№ СЂРµРїРѕР·РёС‚РѕСЂС–Р№ РЅР° РєРѕРјРївЂ™СЋС‚РµСЂ.</li>
-    <li><b>git status</b> вЂ“ РїРѕРєР°Р·СѓС” СЃС‚Р°РЅ С„Р°Р№Р»С–РІ (Р·РјС–РЅРµРЅС–, РґРѕРґР°РЅС–).</li>
-    <li><b>git add &lt;file&gt;</b> вЂ“ РґРѕРґР°С” С„Р°Р№Р» Сѓ СЃРїРёСЃРѕРє РґР»СЏ С„С–РєСЃР°С†С–С— (staging area).</li>
-    <li><b>git commit -m "РїРѕРІС–РґРѕРјР»РµРЅРЅСЏ"</b> вЂ“ Р·Р±РµСЂС–РіР°С” Р·РјС–РЅРё Р· РєРѕРјРµРЅС‚Р°СЂРµРј.</li>
-    <li><b>git log</b> вЂ“ РїРѕРєР°Р·СѓС” С–СЃС‚РѕСЂС–СЋ РєРѕРјС–С‚С–РІ.</li>
-    <li><b>git branch</b> вЂ“ РІС–РґРѕР±СЂР°Р¶Р°С” СЃРїРёСЃРѕРє РіС–Р»РѕРє.</li>
-    <li><b>git checkout &lt;branch&gt;</b> вЂ“ РїРµСЂРµРјРёРєР°С”С‚СЊСЃСЏ РЅР° С–РЅС€Сѓ РіС–Р»РєСѓ.</li>
-    <li><b>git merge &lt;branch&gt;</b> вЂ“ Р·Р»РёРІР°С” РіС–Р»РєСѓ Р· РїРѕС‚РѕС‡РЅРѕСЋ.</li>
-    <li><b>git push / git pull</b> вЂ“ РЅР°РґСЃРёР»Р°С” Р°Р±Рѕ РѕС‚СЂРёРјСѓС” Р·РјС–РЅРё Р· РІС–РґРґР°Р»РµРЅРѕРіРѕ СЂРµРїРѕР·РёС‚РѕСЂС–СЋ.</li>
-  </ul>
-</section>
+        <section id="commands">
+          <h3>Приклади базових команд CLI</h3>
+          <p>Команди нижче — короткий набір для роботи з файловою системою та консоллю.</p>
+          <div class="commands">
+            <div class="cmd"><code>pwd</code><div style="color:var(--muted);margin-top:6px">Показує поточний робочий каталог</div></div>
+            <div class="cmd"><code>echo &quot;текст&quot;</code><div style="color:var(--muted);margin-top:6px">Виводить текст у консоль</div></div>
+            <div class="cmd"><code>ls -la</code><div style="color:var(--muted);margin-top:6px">Перелік файлів каталогу з детальною інформацією</div></div>
+            <div class="cmd"><code>cd /path/to/dir</code><div style="color:var(--muted);margin-top:6px">Зміна поточного каталогу</div></div>
+            <div class="cmd"><code>touch file.txt</code><div style="color:var(--muted);margin-top:6px">Створює порожній файл або змінює час модифікації</div></div>
+            <div class="cmd"><code>mkdir newdir</code><div style="color:var(--muted);margin-top:6px">Створює каталог</div></div>
+            <div class="cmd"><code>cp src dest</code><div style="color:var(--muted);margin-top:6px">Копіює файл або каталог (-r для рекурсії)</div></div>
+            <div class="cmd"><code>mv old new</code><div style="color:var(--muted);margin-top:6px">Перейменувати / перемістити</div></div>
+            <div class="cmd"><code>rm file</code><div style="color:var(--muted);margin-top:6px">Видалення файлу (rm -r для каталогів)</div></div>
+            <div class="cmd"><code>history</code><div style="color:var(--muted);margin-top:6px">Покажe історію введених команд</div></div>
+          </div>
 
-<section>
-  <h2>РЎРµСЂС‚РёС„С–РєР°С‚ РєСѓСЂСЃСѓ РїРѕ Git</h2>
-  <div class="certificate">
-    <h3>РЎРµСЂС‚РёС„С–РєР°С‚</h3>
-    <p><b></b><br><b></b></p>
-    <p><i></i></p>
+          <h4 style="margin-top:14px">Невеликий приклад використання</h4>
+          <pre><code># Створимо структуру
+mkdir project && cd project
+touch README.md
+echo "# Мій проект" &gt; README.md
+ls -la
+</code></pre>
+        </section>
+
+        <section id="script">
+          <h3>BASH-скрипт — імітація авторизації (текстовий режим)</h3>
+          <p>Нижче — приклад простого shell-скрипта, який демонструє введення логіна/пароля і базову перевірку. <strong>Увага:</strong> у реальних умовах не зберігайте паролі у відкритому вигляді і використовуйте належні механізми аутентифікації.</p>
+
+          <pre><code># auth_demo.sh
+#!/usr/bin/env bash
+
+# Простий демонстраційний скрипт авторизації
+# Збережіть цей файл як auth_demo.sh і зробіть виконуваним: chmod +x auth_demo.sh
+
+# Жорстко вбудовані "користувачі" для демонстрації
+declare -A USERS
+USERS[alice]=password123
+USERS[bob]=qwerty
+
+read -p "Логін: " LOGIN
+# -s приховує введення пароля
+read -s -p "Пароль: " PASS
+echo
+
+# Невеликий таймаут для правдоподібності
+sleep 0.6
+
+if [[ -v USERS[$LOGIN] && "${USERS[$LOGIN]}" == "$PASS" ]]; then
+  echo "Авторизація успішна. Ласкаво просимо, $LOGIN!"
+  # Демонстраційні дані сесії
+  echo "$(date) - Користувач $LOGIN увійшов(ла)"
+  exit 0
+else
+  echo "Невірний логін або пароль. Спробуйте ще раз."
+  # Лиміт простих спроб
+  sleep 0.4
+  exit 1
+fi
+</code></pre>
+
+          <p style="margin-top:8px;color:var(--muted)">Порада: щоб зробити більш реалістичну перевірку, замініть перевірку на роботу з хешами (наприклад, через <code>sha256sum</code>) або зберігайте користувачів у захищеному файлі з правами доступу.</p>
+
+          <div style="margin-top:10px">
+            <h4>Демонстрація (імітація терміналу у браузері)</h4>
+            <div class="terminal-demo">$ Логін: &lt;введіть &gt;\n$ Пароль: ********\nАвторизація успішна. Ласкаво просимо!</div>
+          </div>
+        </section>
+
+        <section id="sources">
+          <h3>Джерела та подальше читання</h3>
+          <ul class="sources">
+            <li>Офіційний вебсайт про Linux kernel (kernel.org)</li>
+            <li>Проєкт GNU (gnu.org)</li>
+            <li>Документація Ubuntu, Debian, Fedora, Arch — офіційні сайти дистрибутивів</li>
+            <li>"The Linux Command Line" — William E. Shotts (безкоштовна книга для початківців)</li>
+          </ul>
+        </section>
+
+        <footer>
+          <div>Створено: короткий навчальний матеріал — приклад веб-сторінки з демо-кодом.</div>
+        </footer>
+      </main>
+    </div>
   </div>
-</section>
-
-<section>
-  <h2>Р”Р¶РµСЂРµР»Р° С–РЅС„РѕСЂРјР°С†С–С—</h2>
-  <ul>
-    <li><a href="https://git-scm.com/doc" target="_blank">РћС„С–С†С–Р№РЅР° РґРѕРєСѓРјРµРЅС‚Р°С†С–СЏ Git</a></li>
-    <li><a href="https://guides.github.com/" target="_blank">GitHub Guides</a></li>
-    <li><a href="https://www.atlassian.com/git/tutorials" target="_blank">Atlassian Git Tutorials</a></li>
-  </ul>
-</section>
-
-<footer>
-  <p>В© 2025 РќР°РІС‡Р°Р»СЊРЅРёР№ РїСЂРѕС”РєС‚</p>
-</footer>
-
 </body>
 </html>
-
