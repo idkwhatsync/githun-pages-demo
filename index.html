@@ -2,170 +2,169 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Îãëÿä GNU/Linux — âñòóï</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Опрацювання теми: GNU/Linux</title>
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7dd3fc;--glass:rgba(255,255,255,0.04)}
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#7dd3fc; --glass:rgba(255,255,255,0.03);
+      --radius:12px; --maxw:1100px;
+    }
     *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,#091025 0%, #071021 100%); color:#e6edf3; line-height:1.45}
-    header{padding:28px 24px; display:flex; align-items:center; gap:16px; border-bottom:1px solid rgba(255,255,255,0.03)}
-    header h1{font-size:20px; margin:0}
-    .container{max-width:1100px; margin:28px auto; padding:0 18px}
-    .grid{display:grid; grid-template-columns: 320px 1fr; gap:20px}
-    nav{background:var(--card); padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.6)}
-    nav h2{font-size:14px; margin:0 0 12px 0}
-    nav ul{list-style:none; padding:0; margin:0}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,#091025 0%, #071021 100%); color:#e6edf3; line-height:1.5}
+    header{padding:28px 24px; display:flex; align-items:center; gap:16px; border-bottom:1px solid rgba(255,255,255,0.04)}
+    header h1{font-size:20px;margin:0}
+    header p{margin:2px 0 0 0;color:var(--muted);font-size:13px}
+    .container{max-width:var(--maxw); margin:28px auto; padding:0 18px}
+    .grid{display:grid; grid-template-columns:320px 1fr; gap:20px}
+    nav{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    nav h2{font-size:14px;margin:0 0 12px 0}
+    nav ul{list-style:none;padding:0;margin:0}
     nav li{margin:6px 0}
     nav a{color:var(--muted); text-decoration:none; display:block; padding:8px; border-radius:8px}
     nav a:hover{background:var(--glass); color:var(--accent)}
-    main{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:22px; border-radius:12px; min-height:420px}
+    main{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:22px; border-radius:var(--radius); min-height:420px}
     section{margin-bottom:22px}
     h3{margin:0 0 8px 0; color:#dff6ff}
-    p{color:var(--muted); margin:0 0 12px 0}
-    .badge{display:inline-block; padding:6px 8px; background:rgba(125,211,252,0.08); color:var(--accent); border-radius:8px; font-weight:600; font-size:13px}
+    p, li{color:var(--muted)}
+    .badge{display:inline-block;padding:6px 8px;background:rgba(125,211,252,0.08);color:var(--accent);border-radius:8px;font-weight:600;font-size:13px}
     .distros{display:flex; flex-wrap:wrap; gap:10px}
     .distro{background:rgba(255,255,255,0.02); padding:10px 12px; border-radius:10px; min-width:140px}
     pre{background:#06101a; color:#cdeaff; padding:14px; border-radius:8px; overflow:auto}
     code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace}
     .commands{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px}
     .cmd{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); padding:10px; border-radius:8px}
-    footer{font-size:13px; color:var(--muted); margin-top:12px}
-    .sources li{margin:6px 0}
     .terminal-demo{background:#000; color:#0fdfb3; padding:12px; border-radius:8px; font-family:mono; white-space:pre-wrap}
+    footer{font-size:13px;color:var(--muted);margin-top:12px}
     @media(max-width:900px){.grid{grid-template-columns:1fr} nav{order:2}}
   </style>
 </head>
 <body>
   <header>
-    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
       <circle cx="12" cy="12" r="10" stroke="#7dd3fc" stroke-width="1.2" opacity="0.18"/>
       <path d="M12 4v8l3 3" stroke="#7dd3fc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <div>
-      <h1>Êîðîòêèé îãëÿä GNU/Linux</h1>
-      <div style="margin-top:6px"><span class="badge">OS • CLI • BASH</span></div>
+      <h1>Опрацювання теми: GNU/Linux</h1>
+      <p><span class="badge">OS • CLI • BASH</span> • Короткий навчальний матеріал</p>
     </div>
   </header>
 
   <div class="container">
     <div class="grid">
-      <nav aria-label="Íàâ³ãàö³ÿ ñòîð³íêè">
-        <h2>Ðîçä³ëè</h2>
+      <nav aria-label="Навігація сторінки">
+        <h2>Розділи</h2>
         <ul>
-          <li><a href="#about">Ùî òàêå GNU/Linux</a></li>
-          <li><a href="#distros">Ïîïóëÿðí³ äèñòðèáóòèâè</a></li>
-          <li><a href="#commands">Ïðèêëàäè êîìàíä</a></li>
-          <li><a href="#script">BASH — ³ì³òàö³ÿ àâòîðèçàö³¿</a></li>
-          <li><a href="#sources">Äæåðåëà</a></li>
+          <li><a href="#about">Що таке GNU/Linux</a></li>
+          <li><a href="#distros">Найпопулярніші дистрибутиви</a></li>
+          <li><a href="#commands">Приклади команд CLI</a></li>
+          <li><a href="#script">BASH-скрипт авторизації</a></li>
+          <li><a href="#sources">Джерела інформації</a></li>
         </ul>
       </nav>
 
       <main>
         <section id="about">
-          <h3>Ùî òàêå GNU/Linux</h3>
+          <h3>Що таке GNU/Linux</h3>
           <p>
-            GNU/Linux — öå ïîºäíàííÿ ÿäðà Linux (kernel) òà íàáîðó óòèë³ò GNU ³ äîäàòêîâîãî ïðîãðàìíîãî çàáåçïå÷åííÿ. Öå â³ëüíà, â³äêðèòà îïåðàö³éíà ñèñòåìà, ÿêó ìîæíà ìîäèô³êóâàòè òà ðîçïîâñþäæóâàòè çà â³äêðèòèìè ë³öåíç³ÿìè (íàïðèêëàä, GPL). Linux øèðîêî âèêîðèñòîâóºòüñÿ íà ñåðâåðàõ, âáóäîâàíèõ ñèñòåìàõ, ðîáî÷èõ ñòàíö³ÿõ òà õìàðíèõ ñåðåäîâèùàõ.
+            GNU/Linux — це операційна система, що складається з ядра Linux та набору утиліт GNU і додаткового програмного забезпечення.
+            Вона широко використовується як на серверах, так і на персональних комп'ютерах. Відмінні риси: відкритий код, гнучкість налаштувань,
+            можливість модифікації та сильна спільнота розробників.
           </p>
         </section>
 
         <section id="distros">
-          <h3>Íàéïîïóëÿðí³ø³ äèñòðèáóòèâè</h3>
-          <p>Êîðîòêèé ïåðåë³ê äèñòðèáóòèâ³â, ùî ÷àñòî âèêîðèñòîâóþòüñÿ:</p>
+          <h3>Найпопулярніші дистрибутиви</h3>
+          <p>Короткий перелік дистрибутивів, які часто використовують:</p>
           <div class="distros">
-            <div class="distro"><strong>Ubuntu</strong><div style="color:var(--muted);font-size:13px">Äðóæí³é äëÿ ïî÷àòê³âö³â, âåëèêå êîì'þí³ò³</div></div>
-            <div class="distro"><strong>Debian</strong><div style="color:var(--muted);font-size:13px">Ñòàá³ëüíèé, îñíîâà áàãàòüîõ ³íøèõ äèñòðèáóòèâ³â</div></div>
-            <div class="distro"><strong>Fedora</strong><div style="color:var(--muted);font-size:13px">Ñâ³æ³ ïàêåòè, ï³äòðèìêà â³ä Red Hat</div></div>
-            <div class="distro"><strong>Arch Linux</strong><div style="color:var(--muted);font-size:13px">Ðîë³íã-ðåë³ç, äëÿ ïðîñóíóòèõ êîðèñòóâà÷³â</div></div>
-            <div class="distro"><strong>CentOS Stream / RHEL</strong><div style="color:var(--muted);font-size:13px">Äëÿ ñåðâåð³â, êîðïîðàòèâíà ï³äòðèìêà</div></div>
-            <div class="distro"><strong>Linux Mint</strong><div style="color:var(--muted);font-size:13px">Ï³äõîäèòü ïåðåõîäÿùèì ç Windows</div></div>
+            <div class="distro"><strong>Ubuntu</strong><div style="color:var(--muted);font-size:13px">Зручний для початківців, великий репозиторій</div></div>
+            <div class="distro"><strong>Debian</strong><div style="color:var(--muted);font-size:13px">Стабільний, підходить для серверів</div></div>
+            <div class="distro"><strong>Fedora</strong><div style="color:var(--muted);font-size:13px">Свіжі пакети, спонсор Red Hat</div></div>
+            <div class="distro"><strong>Arch Linux</strong><div style="color:var(--muted);font-size:13px">Для просунутих користувачів, роллінг-реліз</div></div>
+            <div class="distro"><strong>CentOS Stream / RHEL</strong><div style="color:var(--muted);font-size:13px">Для корпоративних серверів</div></div>
+            <div class="distro"><strong>Linux Mint</strong><div style="color:var(--muted);font-size:13px">Зручний інтерфейс для колишніх користувачів Windows</div></div>
           </div>
         </section>
 
         <section id="commands">
-          <h3>Ïðèêëàäè áàçîâèõ êîìàíä CLI</h3>
-          <p>Êîìàíäè íèæ÷å — êîðîòêèé íàá³ð äëÿ ðîáîòè ç ôàéëîâîþ ñèñòåìîþ òà êîíñîëëþ.</p>
+          <h3>Приклади базових команд CLI</h3>
+          <p>Ці команди допоможуть працювати з файловою системою та базовим введенням/виведенням:</p>
+
           <div class="commands">
-            <div class="cmd"><code>pwd</code><div style="color:var(--muted);margin-top:6px">Ïîêàçóº ïîòî÷íèé ðîáî÷èé êàòàëîã</div></div>
-            <div class="cmd"><code>echo &quot;òåêñò&quot;</code><div style="color:var(--muted);margin-top:6px">Âèâîäèòü òåêñò ó êîíñîëü</div></div>
-            <div class="cmd"><code>ls -la</code><div style="color:var(--muted);margin-top:6px">Ïåðåë³ê ôàéë³â êàòàëîãó ç äåòàëüíîþ ³íôîðìàö³ºþ</div></div>
-            <div class="cmd"><code>cd /path/to/dir</code><div style="color:var(--muted);margin-top:6px">Çì³íà ïîòî÷íîãî êàòàëîãó</div></div>
-            <div class="cmd"><code>touch file.txt</code><div style="color:var(--muted);margin-top:6px">Ñòâîðþº ïîðîæí³é ôàéë àáî çì³íþº ÷àñ ìîäèô³êàö³¿</div></div>
-            <div class="cmd"><code>mkdir newdir</code><div style="color:var(--muted);margin-top:6px">Ñòâîðþº êàòàëîã</div></div>
-            <div class="cmd"><code>cp src dest</code><div style="color:var(--muted);margin-top:6px">Êîï³þº ôàéë àáî êàòàëîã (-r äëÿ ðåêóðñ³¿)</div></div>
-            <div class="cmd"><code>mv old new</code><div style="color:var(--muted);margin-top:6px">Ïåðåéìåíóâàòè / ïåðåì³ñòèòè</div></div>
-            <div class="cmd"><code>rm file</code><div style="color:var(--muted);margin-top:6px">Âèäàëåííÿ ôàéëó (rm -r äëÿ êàòàëîã³â)</div></div>
-            <div class="cmd"><code>history</code><div style="color:var(--muted);margin-top:6px">Ïîêàæe ³ñòîð³þ ââåäåíèõ êîìàíä</div></div>
+            <div class="cmd"><code>pwd</code><div style="color:var(--muted);margin-top:6px">Показати поточний робочий каталог</div></div>
+            <div class="cmd"><code>echo "текст"</code><div style="color:var(--muted);margin-top:6px">Вивести текст у консоль</div></div>
+            <div class="cmd"><code>ls -la</code><div style="color:var(--muted);margin-top:6px">Показати список файлів з детальною інформацією</div></div>
+            <div class="cmd"><code>cd /шлях/до/каталогу</code><div style="color:var(--muted);margin-top:6px">Перейти у вказаний каталог</div></div>
+            <div class="cmd"><code>touch file.txt</code><div style="color:var(--muted);margin-top:6px">Створити порожній файл або оновити час модифікації</div></div>
+            <div class="cmd"><code>mkdir newdir</code><div style="color:var(--muted);margin-top:6px">Створити нову папку</div></div>
+            <div class="cmd"><code>cp src dest</code><div style="color:var(--muted);margin-top:6px">Копіювати файл або каталог (-r для рекурсії)</div></div>
+            <div class="cmd"><code>mv old new</code><div style="color:var(--muted);margin-top:6px">Перемістити або перейменувати</div></div>
+            <div class="cmd"><code>rm file</code><div style="color:var(--muted);margin-top:6px">Видалити файл (rm -r для каталогів)</div></div>
+            <div class="cmd"><code>history</code><div style="color:var(--muted);margin-top:6px">Показати історію введених команд</div></div>
           </div>
 
-          <h4 style="margin-top:14px">Íåâåëèêèé ïðèêëàä âèêîðèñòàííÿ</h4>
-          <pre><code># Ñòâîðèìî ñòðóêòóðó
+          <h4 style="margin-top:14px">Приклад простого скрипта для створення структури проекту</h4>
+          <pre><code># Створимо структуру та README
 mkdir project && cd project
 touch README.md
-echo "# Ì³é ïðîåêò" &gt; README.md
+echo "# Мій проєкт" &gt; README.md
 ls -la
 </code></pre>
         </section>
 
         <section id="script">
-          <h3>BASH-ñêðèïò — ³ì³òàö³ÿ àâòîðèçàö³¿ (òåêñòîâèé ðåæèì)</h3>
-          <p>Íèæ÷å — ïðèêëàä ïðîñòîãî shell-ñêðèïòà, ÿêèé äåìîíñòðóº ââåäåííÿ ëîã³íà/ïàðîëÿ ³ áàçîâó ïåðåâ³ðêó. <strong>Óâàãà:</strong> ó ðåàëüíèõ óìîâàõ íå çáåð³ãàéòå ïàðîë³ ó â³äêðèòîìó âèãëÿä³ ³ âèêîðèñòîâóéòå íàëåæí³ ìåõàí³çìè àóòåíòèô³êàö³¿.</p>
+          <h3>BASH-скрипт — імітація авторизації (текстовий режим)</h3>
+          <p>Нижче наведено приклад простого демонстраційного shell-скрипта, який імітує авторизацію в текстовому режимі.
+          <strong>Увага:</strong> в реальних умовах не зберігайте паролі у відкритому вигляді та використовуйте механізми хешування.</p>
 
           <pre><code># auth_demo.sh
 #!/usr/bin/env bash
 
-# Ïðîñòèé äåìîíñòðàö³éíèé ñêðèïò àâòîðèçàö³¿
-# Çáåðåæ³òü öåé ôàéë ÿê auth_demo.sh ³ çðîá³òü âèêîíóâàíèì: chmod +x auth_demo.sh
+# Демонстраційний скрипт авторизації
+# Зробіть файл виконуваним: chmod +x auth_demo.sh
 
-# Æîðñòêî âáóäîâàí³ "êîðèñòóâà÷³" äëÿ äåìîíñòðàö³¿
 declare -A USERS
 USERS[alice]=password123
 USERS[bob]=qwerty
 
-read -p "Ëîã³í: " LOGIN
-# -s ïðèõîâóº ââåäåííÿ ïàðîëÿ
-read -s -p "Ïàðîëü: " PASS
+read -p "Логін: " LOGIN
+read -s -p "Пароль: " PASS
 echo
 
-# Íåâåëèêèé òàéìàóò äëÿ ïðàâäîïîä³áíîñò³
-sleep 0.6
+sleep 0.4
 
 if [[ -v USERS[$LOGIN] && "${USERS[$LOGIN]}" == "$PASS" ]]; then
-  echo "Àâòîðèçàö³ÿ óñï³øíà. Ëàñêàâî ïðîñèìî, $LOGIN!"
-  # Äåìîíñòðàö³éí³ äàí³ ñåñ³¿
-  echo "$(date) - Êîðèñòóâà÷ $LOGIN óâ³éøîâ(ëà)"
+  echo "Авторизація успішна. Ласкаво просимо, $LOGIN!"
+  echo "$(date) - Користувач $LOGIN увійшов(ла)"
   exit 0
 else
-  echo "Íåâ³ðíèé ëîã³í àáî ïàðîëü. Ñïðîáóéòå ùå ðàç."
-  # Ëèì³ò ïðîñòèõ ñïðîá
+  echo "Невірний логін або пароль. Спробуйте ще раз."
   sleep 0.4
   exit 1
 fi
 </code></pre>
 
-          <p style="margin-top:8px;color:var(--muted)">Ïîðàäà: ùîá çðîáèòè á³ëüø ðåàë³ñòè÷íó ïåðåâ³ðêó, çàì³í³òü ïåðåâ³ðêó íà ðîáîòó ç õåøàìè (íàïðèêëàä, ÷åðåç <code>sha256sum</code>) àáî çáåð³ãàéòå êîðèñòóâà÷³â ó çàõèùåíîìó ôàéë³ ç ïðàâàìè äîñòóïó.</p>
-
           <div style="margin-top:10px">
-            <h4>Äåìîíñòðàö³ÿ (³ì³òàö³ÿ òåðì³íàëó ó áðàóçåð³)</h4>
-            <div class="terminal-demo">$ Ëîã³í: &lt;ââåä³òü &gt;\n$ Ïàðîëü: ********\nÀâòîðèçàö³ÿ óñï³øíà. Ëàñêàâî ïðîñèìî!</div>
+            <h4>Демо-інтерфейс (приклад)</h4>
+            <div class="terminal-demo">$ Логін: &lt;введіть&gt;\n$ Пароль: ********\nАвторизація успішна. Ласкаво просимо!</div>
           </div>
         </section>
 
         <section id="sources">
-          <h3>Äæåðåëà òà ïîäàëüøå ÷èòàííÿ</h3>
+          <h3>Джерела інформації</h3>
           <ul class="sources">
-            <li>Îô³ö³éíèé âåáñàéò ïðî Linux kernel (kernel.org)</li>
-            <li>Ïðîºêò GNU (gnu.org)</li>
-            <li>Äîêóìåíòàö³ÿ Ubuntu, Debian, Fedora, Arch — îô³ö³éí³ ñàéòè äèñòðèáóòèâ³â</li>
-            <li>"The Linux Command Line" — William E. Shotts (áåçêîøòîâíà êíèãà äëÿ ïî÷àòê³âö³â)</li>
+            <li>Офіційний вебсайт Linux kernel — <a href="https://www.kernel.org" target="_blank" rel="noopener">kernel.org</a></li>
+            <li>Проєкт GNU — <a href="https://www.gnu.org" target="_blank" rel="noopener">gnu.org</a></li>
+            <li>Офіційні сайти дистрибутивів: Ubuntu, Debian, Fedora, Arch</li>
+            <li>Книга "The Linux Command Line" — William E. Shotts</li>
           </ul>
         </section>
 
         <footer>
-          <div>Ñòâîðåíî: êîðîòêèé íàâ÷àëüíèé ìàòåð³àë — ïðèêëàä âåá-ñòîð³íêè ç äåìî-êîäîì.</div>
+          <div>Примітка: матеріал підготовлено як короткий навчальний огляд — приклад веб-сторінки з розміткою та стилями.</div>
         </footer>
       </main>
     </div>
   </div>
 </body>
 </html>
-
